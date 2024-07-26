@@ -49,6 +49,5 @@ namespace UserAgentApi.Dtos
         // Optional field for related entities
         public int? AgentId { get; set; }
 
-        public AgentDto Agent { get; set; }
     }
 }

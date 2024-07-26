@@ -9,10 +9,10 @@ namespace UserAgentApi.Mappings
         public MappingProfile()
         {
             CreateMap<User, UserDto>()
-               .ForMember(dest => dest.Agent, opt => opt.Ignore()).ReverseMap();
+               .ReverseMap();
 
             CreateMap<Agent, AgentDto>()
-            .ForMember(dest => dest.Users, opt => opt.MapFrom(src => src.Users)) // Map Users to UserDto
+            .ForMember(dest => dest.Users, opt => opt.MapFrom(src => src.Users))
             .ReverseMap();
 
             CreateMap<User, UserCreateDto>().ReverseMap();
