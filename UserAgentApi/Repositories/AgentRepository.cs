@@ -17,14 +17,14 @@ namespace UserAgentApi.Repositories
         public async Task<IEnumerable<Agent>> GetAllWithUsersAsync()
         {
             return await _context.Agents
-                                 .Include(a => a.Users) // Include Users
+                                 .Include(a => a.Users) 
                                  .ToListAsync();
         }
 
         public async Task<Agent> GetByIdWithUsersAsync(int id)
         {
             return await _context.Agents
-                                 .Include(a => a.Users) // Include Users
+                                 .Include(a => a.Users)
                                  .FirstOrDefaultAsync(a => a.Id == id);
         }
     }

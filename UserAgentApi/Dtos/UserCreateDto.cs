@@ -45,6 +45,6 @@ namespace UserAgentApi.Dtos
         public DateTime UpdatedDate { get; set; }
 
         [Required]
-        public int? AgentId { get; set; } // Only AgentId is required for creation
+        public int? AgentId { get; set; }
     }
 }

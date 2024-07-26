@@ -44,7 +44,7 @@ namespace UserAgentApi.Controllers
 
             await _cache.SetStringAsync(cacheKey, serializedUsers, new DistributedCacheEntryOptions
             {
-                AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(10) // Cache duration of 10 seconds
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(10) 
             });
 
             _logger.LogInformation("Fetched users from database.");
@@ -101,7 +101,7 @@ namespace UserAgentApi.Controllers
             await _unitOfWork.CompleteAsync();
 
             var updatedUserDto = _mapper.Map<UserDto>(existingUser);
-            return Ok(updatedUserDto); // Return the updated user in UserDto format
+            return Ok(updatedUserDto);
         }
 
         [HttpDelete("{id}")]
